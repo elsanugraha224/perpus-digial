@@ -5,10 +5,10 @@
         </div>
         
         <div class="col-lg-11">
-            <h1>Perpus Digital</h1>
+            <h1>PERPUS DIGITAL</h1>
             <address>
                 SMKN 4 Tasikmalaya
-                JL.Depok, Sukamanah, purbaratu
+               <p>Jl.Depok, Sukamanah, purbaratu</p>
             </address>
         </div>
     </div>

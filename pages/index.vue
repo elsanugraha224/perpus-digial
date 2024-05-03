@@ -5,7 +5,7 @@
                 <nuxt-link to="../pengunjung/tambah">
                     <div class="card bg-pengunjung rounded-5">
                         <div class="card-body">
-                            <h2>Pengunjung</h2>
+                            <h2>PENGUNJUNG</h2>
                         </div>
                     </div>
                 </nuxt-link>
@@ -14,7 +14,7 @@
                 <nuxt-link to="../buku">
                     <div class="card bg-buku rounded-5">
                         <div class="card-body">
-                            <h2>Cari Buku</h2>
+                            <h2>CARI BUKU</h2>
                         </div>
                     </div>
                 </nuxt-link>
@@ -28,14 +28,14 @@
         <div class="card1">
           <div class="raccing">
             <h1>3</h1>
-            <h5>Pengunjung</h5>
+            <h5>PENGUNJUNG</h5>
           </div>
         </div>
       </div>
       <div class="col-5">
         <div class="raccing1">
           <h1>30</h1>
-          <h5>Buku</h5>
+          <h5>BUKU</h5>
         </div>
       </div>
       <div class="line">
@@ -51,13 +51,13 @@
     box-shadow: 1px 1px 10px #424242;
 }
 .card.bg-pengunjung {
-    background-image: url('../assets/img/bg-home-kunjungan (1) (1).jpeg');
+    background-image: url('../assets/img/Picture1.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 .card.bg-buku {
-    background: url('../assets/img/bg-home-cari-buku (3).jpg');
+    background: url('../assets/img/Picture2.png') no-repeat center center;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -93,6 +93,6 @@ h5{
   padding-top: 10px;
 }
 .card-body h2{
-    color: white;
+    color: black;
 }
 </style>
