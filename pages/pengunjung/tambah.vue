@@ -5,7 +5,7 @@
                 <h2 class="text-center my-4">ISI BUKU KUNJUNGAN</h2>
                 <form @submit.prevent="kirimData">
                     <div class="mb-3">
-                        <input v-model="form.nama" class="form-control form-control-lg rounded-5" type="text" placeholder="nama..."/>
+                        <input v-model="form.nama" class="form-control form-control-lg rounded-5" type="text" placeholder="nama"/>
                     </div>
                     <div class="mb-3">
                         <select v-model="form.keanggotaan"  class="form-control form-control-lg form-select rounded-5">

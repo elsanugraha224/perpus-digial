@@ -12,7 +12,7 @@
               />
             </form>
           </div>
-          <div class="my-3 text-muted">menampilkan 4 dari 125</div>
+          <div class="my-3 text-muted">menampilkan 30 dari 30</div>
           <div class="row justify-content-evenly">
             <div v-for="(buku, i) in books" :key="i" class="col-lg-2">
             <nuxt-link to="/buku/${buku.id}">
@@ -57,9 +57,9 @@
     object-position: 0 30;
   }
   .form-control {
-    background-color: #D9D9D9;
+    background-color: azure;
   }
   .btn {
-    background-color: #D9D9D9;
+    background-color: azure;
   }
   </style>

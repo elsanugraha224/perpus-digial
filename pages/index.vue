@@ -27,15 +27,14 @@
       <div class="col-5">
         <div class="card1">
           <div class="raccing">
-            <h1>3</h1>
-            <h5>PENGUNJUNG</h5>
+            <h2><span class="no">{{ jml_pengunjung }}</span> pengunjung</h2>
           </div>
         </div>
       </div>
       <div class="col-5">
         <div class="raccing1">
-          <h1>30</h1>
-          <h5>BUKU</h5>
+          <h2><span class="no">{{ jml_buku }}</span> Buku</h2>
+
         </div>
       </div>
       <div class="line">
@@ -44,6 +43,33 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const supabase = useSupabaseClient()
+const jml_pengunjung = ref(0)
+const jml_buku = ref(0)
+
+async function getjml_pengunjung() {
+  const{ error , data, count } = await supabase
+  .from("Pengunjung")
+  .select('*', { count: 'exact' })
+  if (count) jml_pengunjung.value = count
+  
+}
+async function getjml_buku() {
+  const{ error , data, count } = await supabase
+  .from("Buku")
+  .select('*', { count: 'exact' })
+  if (count) jml_buku.value = count
+  
+}
+
+
+onMounted(() => {
+  getjml_pengunjung()
+  getjml_buku()
+})
+</script>
 
 <style scoped>
 .card {

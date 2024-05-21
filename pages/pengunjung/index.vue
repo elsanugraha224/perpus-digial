@@ -4,10 +4,10 @@
             <div class="col-lg-12">
                 <h2 class="text-center my-4">riwayat kunjungan</h2>
                 <div class="my-3">
-                    <input type="search" class="form-control rounded-5" placeholder="Fiter...">
+                    <input type="search" class="form-control rounded-5 btn-dark btn-lg " placeholder="Fiter">
                 </div>
-                 <div class="my-3 text-muted">menampilkan 1 drat</div>
-                 <table class="table">
+                <div class="my-3 text-muted">menampilkan 1drat 15</div>
+                <table class="table">
                     <thead>
                         <tr>
                             <td>#</td>
@@ -26,13 +26,13 @@
                             <td>{{ visitor.keperluan.nama }}</td>
                         </tr>
                     </tbody>
-                 </table>
+                </table>
             </div>
         </div>
         <NuxtLink to="/pengunjung/tambah">
             <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
         </NuxtLink>
-           
+        
         
     </div>
 </template>
@@ -50,3 +50,12 @@ onMounted(() => {
     getPengunjung()
 })
 </script>
+<style scoped>
+.btn{
+    background-color: #C0F2EC;
+    color: black;
+}
+.form-control{
+    background-color: #C0F2EC;
+}
+</style>                                                                                        
