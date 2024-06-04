@@ -4,9 +4,11 @@
             <div class="col-lg-12">
                 <h2 class="text-center my-4">riwayat kunjungan</h2>
                 <div class="my-3">
-                    <input type="search" class="form-control rounded-5 btn-dark btn-lg " placeholder="Fiter">
+                    <form @sumbit.prevent="getBuku">
+                        <input type="search" class="form-control rounded-5 btn-dark btn-lg " placeholder="Fiter">
+                    </form>
                 </div>
-                <div class="my-3 text-muted">menampilkan 1drat 15</div>
+                <div class="my-3 text-muted">menampilkan daftar pengunjung</div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -32,22 +34,26 @@
         <NuxtLink to="/pengunjung/tambah">
             <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
         </NuxtLink>
-        
-        
     </div>
 </template>
 <script setup>
 const supabase = useSupabaseClient()
-
+const keyword = ref('')
 const visitors = ref([])
 
 const getPengunjung = async () => {
     const { data, error } = await supabase.from('Pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
     if(data) visitors.value = data
 }
+const getBuku = async () => {
+    const { data, error } = await supabase.from('Pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
+    .ilike('nama', `%${keyword.value}%`)
+    if(data) visitors.value = data
+}
 
 onMounted(() => {
     getPengunjung()
+    getBuku()
 })
 </script>
 <style scoped>
