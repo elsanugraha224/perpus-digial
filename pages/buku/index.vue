@@ -89,6 +89,5 @@
   }
   .btn {
     background-color: #DFF2F6;
-    color: black;
   }
   </style>
