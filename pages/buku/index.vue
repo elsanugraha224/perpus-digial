@@ -18,7 +18,7 @@
             <nuxt-link :to="`/buku/${buku.id}`">
                 <div class="card mb-3">
                   <div class="card-body">
-                    <img :src="buku.cover" class="cover" :alt="buku.judul" />
+                    <img :src="buku.cover" class="cover" :alt="buku.Judul" />
                   </div>
                 </div>
               </nuxt-link>
@@ -41,7 +41,8 @@
     const { data, error} = await supabase
     .from('Buku')
     .select('* kategori_buku(*)')
-    .ilike("judul", `%${keyword.value}%`);
+    .ilike("Judul", `%${keyword.value}%`);
+    if(error) throw error
     if(data) books.value= data;
   
   };
@@ -59,6 +60,19 @@
   </script>
 
   <style scoped>
+
+  .shadow-lg {
+    box-shadow: 6px 4px 0 #2e2e2eae !important;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px #2e2e2eae !important;
+  }
+
+  .card {
+    transition: all .2s ease-in-out;
+  }
   .card-body {
     width: 100%;
     height: 30em;
@@ -71,9 +85,9 @@
     object-position: 0 30;
   }
   .form-control {
-    background-color: azure;
+    background-color: #DFF2F6;
   }
   .btn {
-    background-color: azure;
+    background-color: #DFF2F6;
   }
   </style>
