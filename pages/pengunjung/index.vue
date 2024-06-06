@@ -2,14 +2,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="text-center my-4">riwayat kunjungan</h2>
+                <h2 class="text-center my-4">RIWAYAT KUNJUNGAN</h2>
                 <div class="my-3">
-                    <form @sumbit.prevent="getBuku">
-                        <input type="search" class="form-control rounded-5 btn-dark btn-lg " placeholder="Fiter">
+                    <form @submit.prevent="getPengunjung">
+                        <input v-model="keyword" type="search" class="form-control rounded-5 btn-dark btn-lg " placeholder="Fiter">
                     </form>
                 </div>
-                <div class="my-3 text-muted">menampilkan daftar pengunjung</div>
-                <table class="table">
+                <div class="my-3 text-muted">menampilkan daftar riwayat kunjungan </div>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <td>#</td>
@@ -37,31 +37,28 @@
     </div>
 </template>
 <script setup>
+import { compileTemplate } from 'vue/compiler-sfc';
+
 const supabase = useSupabaseClient()
 const keyword = ref('')
 const visitors = ref([])
 
 const getPengunjung = async () => {
     const { data, error } = await supabase.from('Pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
-    if(data) visitors.value = data
-}
-const getBuku = async () => {
-    const { data, error } = await supabase.from('Pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
     .ilike('nama', `%${keyword.value}%`)
+    if(error) throw error
     if(data) visitors.value = data
 }
-
 onMounted(() => {
     getPengunjung()
-    getBuku()
 })
 </script>
 <style scoped>
 .btn{
-    background-color: #C0F2EC;
+    background-color: #DFF2F6;
     color: black;
 }
 .form-control{
-    background-color: #C0F2EC;
+    background-color: #DFF2F6;
 }
 </style>                                                                                        

@@ -16,7 +16,7 @@
           <div class="row justify-content-evenly">
             <div v-for="(buku, i) in books" :key="i" class="col-lg-2">
             <nuxt-link :to="`/buku/${buku.id}`">
-                <div class="card mb-3">
+                <div class="card mb-3 shadow-lg">
                   <div class="card-body">
                     <img :src="buku.cover" class="cover" :alt="buku.Judul" />
                   </div>
@@ -89,5 +89,6 @@
   }
   .btn {
     background-color: #DFF2F6;
+    color: black;
   }
   </style>
