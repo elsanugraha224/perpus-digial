@@ -34,7 +34,7 @@
         </nuxt-link>
       </div>
       <div class="col-5">
-        <nuxt-link to="https://perpus-digial.vercel.app//buku">
+        <nuxt-link to="https://perpus-digial.vercel.app/buku">
         <div class="raccing1">
           <h2><span class="no">{{ jml_buku }}</span> Buku</h2>
         </div>
